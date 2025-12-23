@@ -17,7 +17,8 @@ const seedData = async () => {
     { name: "Mandi House", lines: ["Blue","Violet"], interchange: true },
     { name: "Yamuna Bank", lines: ["Blue"], interchange: false },
     { name: "Noida City Centre", lines: ["Blue"], interchange: false },
-    { name: "Kashmere Gate", lines: ["Red","Yellow","Violet"], interchange: true }
+    { name: "Kashmere Gate", lines: ["Red","Yellow","Violet"], interchange: true },
+    { name: "Supreme Court", lines: ["Blue"], interchange: true}
   ]);
 
   // Create connections
@@ -25,6 +26,7 @@ const seedData = async () => {
     { from: stations[0]._id, to: stations[1]._id, time: 5, line: "Blue" },
     { from: stations[1]._id, to: stations[2]._id, time: 6, line: "Blue" },
     { from: stations[2]._id, to: stations[3]._id, time: 8, line: "Blue" },
+    { from: stations[3]._id, to: stations[5]._id, time: 2, line: "Blue"},
     { from: stations[0]._id, to: stations[4]._id, time: 4, line: "Yellow" },
     { from: stations[4]._id, to: stations[1]._id, time: 7, line: "Violet" }
   ]);
