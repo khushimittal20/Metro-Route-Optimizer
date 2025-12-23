@@ -9,8 +9,8 @@ function App() {
   const [route, setRoute] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const API_URL = process.env.REACT_APP_API_URL;
-  console.log(process.env.REACT_APP_API_URL);
+  const API_URL = process.env.REACT_APP_API_URL?.replace(/\/$/, '');
+  console.log("API_URL:", API_URL);
 
   // Fetch all stations on component mount
   useEffect(() => {
