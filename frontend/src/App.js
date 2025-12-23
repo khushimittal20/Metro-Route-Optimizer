@@ -23,7 +23,7 @@ function App() {
       }
     };
     fetchStations();
-  }, []);
+  }, [API_URL]);
 
   const getRoute = async () => {
     if (!sourceId || !destinationId) {
