@@ -9,12 +9,13 @@ function App() {
   const [route, setRoute] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const API_URL = process.env.REACT_APP_API_URL;
 
   // Fetch all stations on component mount
   useEffect(() => {
     const fetchStations = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/metro/stations");
+        const res = await axios.get(`${API_URL}/api/metro/stations`);
         setStations(res.data);
       } catch (err) {
         console.error(err);
@@ -36,7 +37,7 @@ function App() {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/metro/route?sourceId=${sourceId}&destinationId=${destinationId}`
+        `${API_URL}/api/metro/route?sourceId=${sourceId}&destinationId=${destinationId}`
       );
       setRoute(res.data);
     } catch (err) {
